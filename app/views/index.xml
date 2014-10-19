@@ -1,0 +1,35 @@
+<Alloy>
+	<TabGroup>
+		<Tab title="Tab 1" icon="KS_nav_ui.png">
+			<Window title="Tab 1">
+				<RightNavButton>
+					<Button id="rightnav" title="refresh" onClick="doRefresh"/>
+				</RightNavButton>
+				<ListView id="listView" defaultItemTemplate="template"  >
+					<SearchBar barColor="#D8D8D8" id="searchbar"/>
+		            <Templates>
+		                <ItemTemplate name="template">
+		                    <Label bindId="id" id="id" left="-100dp" visible="false"/>
+		                    <Label bindId="info" id="title" />
+		                   
+		                    <Label bindId="es_info" id="subtitle" />
+		                   	<Label bindId="counter" id="counter" />
+		                </ItemTemplate>
+		
+		            </Templates>
+		            
+					 <ListSection headerTitle="" dataCollection="commondata" dataFilter="filterInvites" id="invites" dataTransform="doTransform">
+		                <ListItem id:text="{inviteid}" info:text="{name}" es_info:text="{dname}" counter:text="{counter}" searchableText="{sorter}" accessoryType="Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE" />
+		            </ListSection>
+		           
+		       
+		        </ListView>
+			</Window>
+		</Tab>
+		<Tab title="Tab 2" icon="KS_nav_views.png">
+			<Window title="Tab 2">
+				<Label>I am Window 2</Label>
+			</Window>
+		</Tab>
+	</TabGroup>
+</Alloy>

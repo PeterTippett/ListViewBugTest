@@ -1,0 +1,51 @@
+
+"#gsection" : {
+	font: { fontFamily:'HelveticaNeue-Medium', fontSize: '12dp' },
+    left: '20dp', top: '10dp', height: '26dp',
+    color : '#6E6E6E'
+}
+
+
+"#info" : {
+	font: { fontFamily:'HelveticaNeue-Light', fontSize: '16dp' },
+    left: '20dp', top: '6dp', height: '36dp'
+}
+
+"#ginfo" : {
+	font: { fontFamily:'HelveticaNeue-Light', fontSize: '16dp' },
+    left: '60dp', top: '6dp', height: '36dp'
+}
+
+"#icon" : {
+    width: '32dp', height: '32dp', left: "280dp"
+},
+
+
+"#title" : {
+    color: 'black',
+    width: '140dp',
+    font: { fontFamily:'HelveticaNeue-Light', fontSize: '16dp' },
+    left: '40dp', top: '8dp'
+},
+
+"#subtitle" : {
+    color: 'gray',
+    font: { fontFamily:'HelveticaNeue-Light', fontSize: '10dp' },
+    left: '60dp', top: '18dp', width: '225dp'
+}
+
+"#type" : {
+    color: 'gray',
+    font: { fontFamily:'HelveticaNeue-Light', fontSize: '10dp' },
+    left: '200dp', top: '6dp', width: '100dp'
+}
+
+
+"ListItem" : {
+	height: '36dp'
+}
+
+
+"#counter" : {
+   left: '4dp', top: '4dp'
+},
