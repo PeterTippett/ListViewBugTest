@@ -1,6 +1,5 @@
 var commondata = Alloy.Collections.commondata;
 
-var counter = 1;
 var company = "a74a33a2-7ae4-4c05-b704-099c08fce51e";
 
 var query = 'SELECT * FROM commondata WHERE ntype = \'Invite\' AND companyid = ?';
@@ -14,7 +13,8 @@ commondata.fetch({
 
 function filterInvites(collection) {
     var data = collection.where({ntype:'Invite'});
-    Ti.API.info(data);
+    Ti.API.info(data.length);
+    $.LeftNavButton.title = data.length;
     return data;
 }
 
@@ -22,10 +22,9 @@ function filterInvites(collection) {
 function doTransform(model) {
 	var o = model.toJSON();
 	o.name = o.displayname;
-	o.dname = jsondata.email + " "+ jsondata.mobile;
+	//var jsondata = JSON.parse(o.namevalue);	
+	o.dname = ''; // jsondata.email + " "+ jsondata.mobile;
 	o.sorter = o.name + o.dname;
-	o.counter = counter;
-	counter = counter + 1;
 	return o;
 }
 
@@ -75,6 +74,10 @@ function createinvite(data){
 		id = -1;
 	}
 	db.close();
+	// doing so to force a model update which then shows the bug
+	//showing the above code which I'm normally running
+	id = -1; 
+	
 	if (id >= 0){
 		var commondatarec = commondata.get({id:id});
 		if(commondatarec != undefined){
@@ -95,7 +98,7 @@ function createinvite(data){
 			    ntype: "Invite",
 			    tablefieldname: "invite",
 			    displayname:data.name,
-			    namevalue:JSON.stringify(data),
+			    
 			    dataType: "json"
 			});
 			commondata.add(model, { silent: false });
@@ -108,4 +111,5 @@ function createinvite(data){
 function doRefresh(e){
 	loadinvites();
 }
+
 $.index.open();

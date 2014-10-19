@@ -1,32 +1,8 @@
 
-"#gsection" : {
-	font: { fontFamily:'HelveticaNeue-Medium', fontSize: '12dp' },
-    left: '20dp', top: '10dp', height: '26dp',
-    color : '#6E6E6E'
-}
-
-
 "#info" : {
 	font: { fontFamily:'HelveticaNeue-Light', fontSize: '16dp' },
-    left: '20dp', top: '6dp', height: '36dp'
+    left: '40dp', top: '0dp'
 }
-
-"#ginfo" : {
-	font: { fontFamily:'HelveticaNeue-Light', fontSize: '16dp' },
-    left: '60dp', top: '6dp', height: '36dp'
-}
-
-"#icon" : {
-    width: '32dp', height: '32dp', left: "280dp"
-},
-
-
-"#title" : {
-    color: 'black',
-    width: '140dp',
-    font: { fontFamily:'HelveticaNeue-Light', fontSize: '16dp' },
-    left: '40dp', top: '8dp'
-},
 
 "#subtitle" : {
     color: 'gray',

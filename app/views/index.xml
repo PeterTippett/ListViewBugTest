@@ -2,6 +2,9 @@
 	<TabGroup>
 		<Tab title="Tab 1" icon="KS_nav_ui.png">
 			<Window title="Tab 1">
+				<LeftNavButton>
+					<Button id="LeftNavButton" title="Count"/>
+				</LeftNavButton>
 				<RightNavButton>
 					<Button id="rightnav" title="refresh" onClick="doRefresh"/>
 				</RightNavButton>
@@ -10,8 +13,8 @@
 		            <Templates>
 		                <ItemTemplate name="template">
 		                    <Label bindId="id" id="id" left="-100dp" visible="false"/>
-		                    <Label bindId="info" id="title" />
-		                   
+		                    <Label bindId="info" id="info" />
+		                   	<Label bindId="type" id="type" />
 		                    <Label bindId="es_info" id="subtitle" />
 		                   	<Label bindId="counter" id="counter" />
 		                </ItemTemplate>
@@ -19,7 +22,7 @@
 		            </Templates>
 		            
 					 <ListSection headerTitle="" dataCollection="commondata" dataFilter="filterInvites" id="invites" dataTransform="doTransform">
-		                <ListItem id:text="{inviteid}" info:text="{name}" es_info:text="{dname}" counter:text="{counter}" searchableText="{sorter}" accessoryType="Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE" />
+		                <ListItem id:text="{inviteid}" info:text="{name}" es_info:text="{dname}" type:text="{type}" counter:text="{id}" searchableText="{sorter}" accessoryType="Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE" />
 		            </ListSection>
 		           
 		       
