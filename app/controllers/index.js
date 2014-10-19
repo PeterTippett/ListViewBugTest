@@ -31,7 +31,6 @@ function doTransform(model) {
 
 
 function loadinvites(){
-	counter = 1;
 	var json;
     var xhrlists = Ti.Network.createHTTPClient({
         onload : function() {
@@ -64,32 +63,7 @@ function loadinvites(){
 }
 
 function createinvite(data){
-	var db = Ti.Database.open('_alloy_'); //_alloy_
-    var sql = 'SELECT id FROM commondata WHERE searchid=\"'+data.id+'\"';
-	var queryresult = db.execute(sql);
-	var id = -1;
-	if(queryresult.isValidRow()){
-		id = queryresult.fieldByName('id');
-	} else {
-		id = -1;
-	}
-	db.close();
-	// doing so to force a model update which then shows the bug
-	//showing the above code which I'm normally running
-	id = -1; 
 	
-	if (id >= 0){
-		var commondatarec = commondata.get({id:id});
-		if(commondatarec != undefined){
-			commondatarec.set({
-			    lastDT: data.modified,
-			    displayname:data.name,
-			    namevalue:JSON.stringify(data),
-			    dataType: "json"
-			});
-			commondatarec.save();
-		}
-	} else {
         var model = Alloy.createModel('commondata', {
 				systemid: data.id,
 			    companyid: data.company,
@@ -103,7 +77,7 @@ function createinvite(data){
 			});
 			commondata.add(model, { silent: false });
 			model.save();
-     }
+    
    
 }
 
